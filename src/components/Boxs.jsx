@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "./Box";
+import { useSelector } from "react-redux";
 
 const Boxs = () => {
   const boxData = [
@@ -554,8 +555,51 @@ const Boxs = () => {
               bgColor: "blue",
             }
   ];
+  // const dispatch = useDispatch();
+  // const { robotPosition, grid, recentCommands } = useSelector((state) => state.robot);
+  // const [command, setCommand] = useState('');
+
+  // const handleCommand = () => {
+  //   const { row, col } = robotPosition;
+  //   let newRow = row;
+  //   let newCol = col;
+
+  //   switch (command) {
+  //     case 'l': 
+  //       newCol = Math.max(0, col - 1);
+  //       break;
+  //     case 'r': 
+  //       newCol = Math.min(grid[0].length - 1, col + 1);
+  //       break;
+  //     case 't': 
+  //       newRow = Math.max(0, row - 1);
+  //       break;
+  //     case 'b': 
+  //       newRow = Math.min(grid.length - 1, row + 1);
+  //       break;
+  //     case 't-take': 
+  //       dispatch(pickItem({ row, col }));
+  //       break;
+  //     case 'p-put': 
+  //       dispatch(putItem({ row, col }));
+  //       break;
+  //     default:
+  //       alert('Invalid Command');
+  //       return;
+  //   }
+
+  //   if (['l', 'r', 't', 'b'].includes(command)) {
+  //     dispatch(moveRobot({ row: newRow, col: newCol }));
+  //   }
+
+  //   dispatch(logCommand({ command }));
+  //   setCommand('');
+  // };
+
+
 
   return (
+    
     <div className="flex flex-col p-3 rounded-lg md:p-5 border shadow">
       <h1 className="text-black font-semibold text-xl md:text-2xl">Control Panel</h1>
       <div className="grid lg:grid-cols-11 md:grid-cols-6 grid-cols-11 gap-2 mt-4">
